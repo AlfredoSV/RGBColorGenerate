@@ -3,6 +3,6 @@
 -
 
 
-![cap1]()
+![cap1](https://github.com/AlfredoSV/RGBColorGenerate/blob/master/Captures/Cap1.png)
 
 
