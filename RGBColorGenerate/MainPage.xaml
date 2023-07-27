@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RGBColorGenerate.MainPage">
+
+
+    <ContentPage.Resources>
+        <Color x:Key="RGBRed">#FF3633</Color>
+        <Color x:Key="RGBGreen">#4AB951</Color>
+        <Color x:Key="RGBBlue">#33B2FF</Color>
+    </ContentPage.Resources>
+    <Grid>
+
+        <Frame BackgroundColor="Black" VerticalOptions="Center">
+
+            <VerticalStackLayout>
+                <Label Text="Generate color" FontSize="30" Margin="20,20,20,20" HorizontalTextAlignment="Center" TextColor="White" ></Label>
+                <Label HorizontalTextAlignment="Center" TextColor="White" Text="Red:"></Label>
+                <Slider ThumbColor="{StaticResource RGBRed}" Margin="20,20,20,20"
+                        MaximumTrackColor="{StaticResource RGBGreen}"
+                        MinimumTrackColor="{StaticResource RGBBlue}"></Slider>
+                <Label HorizontalTextAlignment="Center" TextColor="White" Text="Green:"></Label>
+                <Slider ThumbColor="{StaticResource RGBRed}" Margin="20,20,20,20"
+                        MaximumTrackColor="{StaticResource RGBGreen}"
+                        MinimumTrackColor="{StaticResource RGBBlue}"></Slider>
+                <Label HorizontalTextAlignment="Center" TextColor="White" Text="Blue:"></Label>
+                <Slider Value="0000" ThumbColor="{StaticResource RGBRed}" Margin="20,20,20,20"
+                        MaximumTrackColor="{StaticResource RGBGreen}"
+                        MinimumTrackColor="{StaticResource RGBBlue}"></Slider>
+
+                <Frame WidthRequest="130" Padding="5,5,5,5">
+                    <HorizontalStackLayout VerticalOptions="Center" >
+                        <Label VerticalOptions="Center" Text="#7756J" ></Label>
+                    </HorizontalStackLayout>
+                </Frame>
+
+                <Button Margin="5,30,5,10" Text="Generate aleatorie"></Button>
+                
+            </VerticalStackLayout>
+            
+            
+        </Frame>
+        
+    </Grid>
+
+</ContentPage>
