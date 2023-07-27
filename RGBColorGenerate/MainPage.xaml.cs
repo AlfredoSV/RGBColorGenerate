@@ -2,7 +2,8 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+     bool isRandom = false;
+
 
 	public MainPage()
 	{
@@ -11,17 +12,25 @@ public partial class MainPage : ContentPage
 
 	public void GenerateColor_Clicked(object sender, EventArgs e)
 	{
-
-	}
+        isRandom = true;
+        Random ram = new Random();
+        Color color = Color.FromRgb(ram.Next(0, 256), ram.Next(0, 256), ram.Next(0, 256));
+        SetColor(color);
+        Slider_Red.Value = color.Red; Slider_Green.Value =color.Green; Slider_Blue.Value = color.Blue;
+        isRandom = false;
+    }
 
     private void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
     {
-		double colorRed = Slider_Red.Value;
-        double colorBlue = Slider_Blue.Value;
-        double colorGreen = Slider_Green.Value;
+        if(!isRandom) {
+            double colorRed = Slider_Red.Value;
+            double colorBlue = Slider_Blue.Value;
+            double colorGreen = Slider_Green.Value;
 
-		Color color = Color.FromRgb(colorRed, colorGreen, colorBlue);
-        SetColor(color);
+            Color color = Color.FromRgb(colorRed, colorGreen, colorBlue);
+            SetColor(color);
+        }
+		
     }
 
     private void SetColor(Color color)
