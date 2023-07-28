@@ -1,8 +1,12 @@
-﻿namespace RGBColorGenerate;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+
+namespace RGBColorGenerate;
 
 public partial class MainPage : ContentPage
 {
      bool isRandom = false;
+    string colorHex = string.Empty;
 
 
 	public MainPage()
@@ -35,10 +39,17 @@ public partial class MainPage : ContentPage
 
     private void SetColor(Color color)
     {
+        colorHex = color.ToHex();
         Grid_Color.Background = color;
         BtnGenerateColor.BackgroundColor = color;
         ResultColor.Text = color.ToHex();
     }
 
+    private async void Copy_Clicked(object sender, EventArgs e)
+    {
+        await Clipboard.SetTextAsync(colorHex);
+        IToast toast = Toast.Make("Color Copied", CommunityToolkit.Maui.Core.ToastDuration.Short, 12);
+        await toast.Show();
+    }
 }
 

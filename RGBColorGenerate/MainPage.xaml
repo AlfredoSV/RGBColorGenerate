@@ -28,9 +28,10 @@
                         MaximumTrackColor="{StaticResource RGBGreen}"
                         MinimumTrackColor="{StaticResource RGBBlue}" ValueChanged="Slider_ValueChanged"></Slider>
 
-                <Frame WidthRequest="130" Padding="5,5,5,5">
+                <Frame WidthRequest="110" Padding="5,5,5,5" HorizontalOptions="Center" >
                     <HorizontalStackLayout VerticalOptions="Center" >
-                        <Label VerticalOptions="Center" Text="#0000" x:Name="ResultColor" ></Label>
+                        <Label VerticalOptions="Center" Text="#000000" x:Name="ResultColor" ></Label>
+                        <ImageButton Margin="10,3,3,3" Source="paste.svg" HeightRequest="25" WidthRequest="25" VerticalOptions="Center" Clicked="Copy_Clicked"/>
                     </HorizontalStackLayout>
                 </Frame>
 
